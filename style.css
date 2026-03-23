@@ -118,7 +118,10 @@ header > nav > a:hover{
 /*    width: 100%;*/
 /*}*/
 
-
+#menu-icon{
+    font-size: 2rem;
+    display: none;
+}
 
 body {
     margin: 0;
