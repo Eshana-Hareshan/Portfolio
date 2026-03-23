@@ -18,22 +18,56 @@
 <body>
 
 
-<a href="#" class="logo"><img class="logo" src="assets/img/logo.png" alt="logo"><span>shana H Bandara</span></a>
 
 
 <header>
+    <div class="nav-background"></div>
+    <a href="#" class="logo"><img class="logo" src="assets/img/logo.png" alt="logo"></a>
+<!--    navigation bar-->
     <nav>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#project">Project</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#project">Project</a>
+            <a href="#gallery">Gallery</a>
+            <a hrefm="#contact">Contact</a>
     </nav>
-    <i class="fa-solid fa-bars" style="color: rgb(38, 28, 193);"></i>
-    <button class="git">dark_mode</button>
+    <i id="menu-icon" class="fa-solid fa-bars" style="color: rgb(38, 28, 193);"></i>
+
+<!--    day and night mode switch-->
+    <label>
+        <input type="checkbox" class="toggle-switch">
+        <label class="switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider"></span>
+        </label>
+
+        <script>
+            const toggle = document.getElementById('themeToggle');
+            const body = document.body;
+
+            // Load saved theme from localStorage
+            if (localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark-mode');
+                toggle.checked = true;
+            }
+
+            // Toggle theme on change
+            toggle.addEventListener('change', () => {
+                if (toggle.checked) {
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        </script>
+    </label>
+
 </header>
 
-<script src="assets/lib/scrip.js"></script>
+
+
 
 </body>
 </html>
