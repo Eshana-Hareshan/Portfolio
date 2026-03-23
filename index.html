@@ -17,7 +17,8 @@
 </head>
 <body>
 
-
+<canvas></canvas>
+<canvas></canvas>
 
 
 <header>
@@ -60,14 +61,14 @@
                     body.classList.remove('dark-mode');
                     localStorage.setItem('theme', 'light');
                 }
+                if (window.updateBackgroundTheme) window.updateBackgroundTheme();
             });
         </script>
     </label>
-
 </header>
 
 
-
+<script src="background.js"></script>
 
 </body>
 </html>
