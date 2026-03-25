@@ -40,6 +40,8 @@ var HEX_CRAD = 32,
     t = 0, request_id = null;
 
 var isDark = () => document.body.classList.contains('dark-mode');
+var targetTheme = isDark() ? 1 : 0;
+var currentTheme = targetTheme;
 
 var GridItem = function(x, y) {
     this.x = x || 0;
@@ -119,7 +121,8 @@ var Grid = function(rows, cols) {
         // Clear explicitly so that redraws are clean
         ct.clearRect(0, 0, w, h);
         
-        ct.fillStyle = isDark() ? '#171717' : '#ffffff';
+        var bgVal = ~~((23 - 255) * currentTheme + 255);
+        ct.fillStyle = 'rgb(' + bgVal + ',' + bgVal + ',' + bgVal + ')';
         ct.beginPath();
 
         for(var i = 0; i < this.n; i++) {
@@ -129,7 +132,10 @@ var Grid = function(rows, cols) {
         ct.closePath();
         ct.fill();
 
-        ct.strokeStyle = isDark() ? '#2a2a2a' : '#e8f0ff';
+        var hlR = ~~((42 - 232) * currentTheme + 232);
+        var hlG = ~~((42 - 240) * currentTheme + 240);
+        var hlB = ~~((42 - 255) * currentTheme + 255);
+        ct.strokeStyle = 'rgb(' + hlR + ',' + hlG + ',' + hlB + ')';
         ct.beginPath();
 
         for(var i = 0; i < this.n; i++) {
@@ -144,9 +150,7 @@ var Grid = function(rows, cols) {
 };
 
 window.updateBackgroundTheme = function() {
-    if (grid && ctx[1]) {
-        grid.draw(ctx[1]);
-    }
+    targetTheme = isDark() ? 1 : 0;
 };
 
 var init = function() {
@@ -180,6 +184,20 @@ var init = function() {
 };
 
 var neon = function() {
+    if (currentTheme !== targetTheme) {
+        var step = 1 / (60 * 0.4); // 0.4s transition at ~60fps
+        if (targetTheme > currentTheme) {
+            currentTheme += step;
+            if (currentTheme > 1) currentTheme = 1;
+        } else {
+            currentTheme -= step;
+            if (currentTheme < 0) currentTheme = 0;
+        }
+        if (grid && ctx[1]) {
+            grid.draw(ctx[1]);
+        }
+    }
+
     var k = (t%T_SWITCH)*f,
         rgb = {
             'r': ~~(wp[csi].r*(1 - k) +
@@ -197,10 +215,11 @@ var neon = function() {
 
     stp = .5 - .5*sin(7*t*f)*cos(5*t*f)*sin(3*t*f);
 
+    var innerRgb = ~~((0 - 255) * currentTheme + 255);
     light.addColorStop(0, rgb_str);
-    light.addColorStop(stp, isDark() ? 'rgba(0,0,0,.03)' : 'rgba(255,255,255,.03)');
+    light.addColorStop(stp, 'rgba(' + innerRgb + ',' + innerRgb + ',' + innerRgb + ',.03)');
 
-    fillBackground(isDark() ? 'rgba(0,0,0,.02)' : 'rgba(255,255,255,.02)');
+    fillBackground('rgba(' + innerRgb + ',' + innerRgb + ',' + innerRgb + ',.02)');
     fillBackground(light);
 
     t++;

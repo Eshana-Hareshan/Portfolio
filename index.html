@@ -17,58 +17,71 @@
 </head>
 <body>
 
-<canvas></canvas>
-<canvas></canvas>
+    <canvas></canvas>
+    <canvas></canvas>
 
 
-<header>
-    <div class="nav-background"></div>
-    <a href="#" class="logo"><img class="logo" src="assets/img/logo.png" alt="logo"></a>
+    <header>
+        <div class="nav-background"></div>
+        <a href="#" class="logo"><img class="logo" src="assets/img/logo.png" alt="logo"></a>
 <!--    navigation bar-->
-    <nav>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#project">Project</a>
-            <a href="#gallery">Gallery</a>
-            <a hrefm="#contact">Contact</a>
-    </nav>
-    <i id="menu-icon" class="fa-solid fa-bars" style="color: rgb(38, 28, 193);"></i>
+        <nav>
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#project">Project</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+        </nav>
+        <i id="menu-icon" class="fa-solid fa-bars" style="color: rgb(38, 28, 193);"></i>
 
 <!--    day and night mode switch-->
-    <label>
-        <input type="checkbox" class="toggle-switch">
-        <label class="switch">
-            <input type="checkbox" id="themeToggle">
-            <span class="slider"></span>
-        </label>
+        <label>
+            <input type="checkbox" class="toggle-switch">
+            <label class="switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"></span>
+            </label>
 
-        <script>
-            const toggle = document.getElementById('themeToggle');
-            const body = document.body;
+            <script>
+                const toggle = document.getElementById('themeToggle');
+                const body = document.body;
 
-            // Load saved theme from localStorage
-            if (localStorage.getItem('theme') === 'dark') {
-                body.classList.add('dark-mode');
-                toggle.checked = true;
-            }
-
-            // Toggle theme on change
-            toggle.addEventListener('change', () => {
-                if (toggle.checked) {
+                // Load saved theme from localStorage
+                if (localStorage.getItem('theme') === 'dark') {
                     body.classList.add('dark-mode');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    body.classList.remove('dark-mode');
-                    localStorage.setItem('theme', 'light');
+                    toggle.checked = true;
                 }
-                if (window.updateBackgroundTheme) window.updateBackgroundTheme();
-            });
-        </script>
-    </label>
-</header>
+
+                // Toggle theme on change
+                toggle.addEventListener('change', () => {
+                    if (toggle.checked) {
+                        body.classList.add('dark-mode');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        body.classList.remove('dark-mode');
+                        localStorage.setItem('theme', 'light');
+                    }
+                    if (window.updateBackgroundTheme) window.updateBackgroundTheme();
+                });
+            </script>
+        </label>
+    </header>
+
+    <div class="banner">
+        <div class="slider1" style="--quantity: 7">
+            <div class="item" style="--position:1"><img src="assets/img/css.png" alt="css image"> </div>
+            <div class="item" style="--position:2"><img src="assets/img/html.png" alt="css image"> </div>
+            <div class="item" style="--position:3"><img src="assets/img/java.png" alt="css image"> </div>
+            <div class="item" style="--position:4"><img src="assets/img/js.png" alt="css image"> </div>
+            <div class="item" style="--position:5"><img src="assets/img/pg.png" alt="css image"> </div>
+            <div class="item" style="--position:6"><img src="assets/img/python.png" alt="css image"> </div>
+            <div class="item" style="--position:7"><img src="assets/img/sql.png" alt="css image"> </div>
+        </div>
 
 
-<script src="background.js"></script>
+    </div>
+    <script src="background.js"></script>
+
 
 </body>
 </html>
