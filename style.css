@@ -242,7 +242,10 @@ input:checked + .slider:after {
     animation: autoRun 20s linear infinite;
     z-index: 999;
 }
-
+@keyframes autoRun {
+    from { transform: perspective(1200px) rotateX(-16deg) rotateY(0deg); }
+    to   { transform: perspective(1200px) rotateX(-16deg) rotateY(360deg); }
+}
 .banner .slider1 .item {
     position: absolute;
     inset: 0 0 0 0;
