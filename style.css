@@ -270,4 +270,15 @@ input:checked + .slider:after {
     z-index: 998;
 }
 
+.banner > .heroBack{
+    width: 650px;
+    height: 500px;
+    position: sticky;
+    left: 50%;
+    transform: translateX(-50%) translateY(-46%);
+    background-color: #4300FF;
+    filter: blur(300px);
+    opacity: 0.5;
+    z-index: 997;
 
+}
