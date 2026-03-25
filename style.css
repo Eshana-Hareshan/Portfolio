@@ -261,4 +261,13 @@ input:checked + .slider:after {
     object-fit: cover;
 }
 
+.banner > img{
+    width: 600px;
+    height: 450px;
+    position: sticky;
+    left: 50%;
+    transform: translateX(-50%) translateY(55%);
+    z-index: 998;
+}
+
 
