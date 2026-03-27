@@ -281,7 +281,14 @@ body > .about-section{
     top: 100%;
     display: flex;
 }
+body > .about-section > .about-img{
+    position: relative;
+    width: 32vw;
+    height: 42vw;
+    left: -40%;
+    top: 4%;
 
+}
 body > .about-section > .about-text{
     width: 50vw;
     height: 50vh;
