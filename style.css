@@ -9,7 +9,7 @@
 }
 
 canvas{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -110,8 +110,7 @@ body.dark-mode > header > nav > a{
 
 header > nav > a:hover{
     transform: scale(1.3);
-    color: blue;
-    background-image: linear-gradient(#00FFDE,#FFEB00);
+    background-image: linear-gradient(#00FFDE,white,#00FFDE);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: 0.3s ease-in-out;
@@ -223,62 +222,123 @@ input:checked + .slider:after {
     right: auto;
 }
 
-.banner{
-    width: 100%;
-    height: 100vw;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-}
 
-.banner .slider1{
+.hero-section{
+    width: 100vw;
+    height: 100vh;
     position: absolute;
-    width: 200px;
-    height: 200px;
-    top: 10%;
-    left: calc(50% - 100px);
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-    animation: autoRun 20s linear infinite;
     z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-@keyframes autoRun {
-    from { transform: perspective(1200px) rotateX(-16deg) rotateY(0deg); }
-    to   { transform: perspective(1200px) rotateX(-16deg) rotateY(360deg); }
-}
-.banner .slider1 .item {
-    position: absolute;
-    inset: 0 0 0 0;
-    transform:
-            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-            translateZ(550px);
-
+body > .hero-section > .hero-text{
+    position: relative;
+    text-align: center;
+    font-weight: 600;
 }
 
-.banner > .slider1 > .item > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+body > .hero-section > .hero-text > h1 > a{
+    font-size: 100px;
+    transform-origin: center;
+    display: inline-block;
+    transition: transform 0.25s ease, color 0.25s ease;
 }
-
-.banner > img{
-    width: 600px;
-    height: 450px;
-    position: sticky;
-    left: 50%;
-    transform: translateX(-50%) translateY(55%);
-    z-index: 998;
-}
-
-.banner > .heroBack{
-    width: 650px;
-    height: 500px;
-    position: sticky;
-    left: 50%;
-    transform: translateX(-50%) translateY(-46%);
-    background-color: #4300FF;
-    filter: blur(300px);
-    opacity: 0.5;
-    z-index: 997;
+body > .hero-section > .hero-text > h1:hover{
+    font-size: 100px;
+    transition: 0.5s ease-in-out;
 
 }
+body > .hero-section > .hero-text > h1 > a:hover{
+    color: blue;
+    background-image: linear-gradient(#4300FF,#00CAFF,#4300FF);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(2) ;
+}
+@keyframes swin {
+    0%   { transform: scale(2) rotate(0deg); }
+    20%  { transform: scale(2.1) rotate(12deg); }
+    40%  { transform: scale(2.15) rotate(-8deg); }
+    60%  { transform: scale(2.1) rotate(5deg); }
+    80%  { transform: scale(2.05) rotate(-3deg); }
+    100% { transform: scale(2) rotate(0deg); }
+}
+
+body > .hero-section > .hero-text > h1 > a.swing {
+    animation: swin 0.8s ease;
+}
+.swin {
+    display: inline-block;
+    transform-origin: top center;
+    animation: swing 0.6s ease;
+}
+
+/*.banner{*/
+/*    width: 100%;*/
+/*    height: 100vw;*/
+/*    text-align: center;*/
+/*    overflow: hidden;*/
+/*    position: absolute;*/
+/*}*/
+
+/*.banner .slider1{*/
+/*    position: absolute;*/
+/*    width: 200px;*/
+/*    height: 200px;*/
+/*    top: 10%;*/
+/*    left: calc(50% - 100px);*/
+/*    transform-style: preserve-3d;*/
+/*    transform: perspective(1000px);*/
+/*    animation: autoRun 20s linear infinite;*/
+/*    z-index: 999;*/
+/*}*/
+/*@keyframes autoRun {*/
+/*    from { transform: perspective(1200px) rotateX(-16deg) rotateY(0deg); }*/
+/*    to   { transform: perspective(1200px) rotateX(-16deg) rotateY(360deg); }*/
+/*}*/
+/*.banner .slider1 .item {*/
+/*    position: absolute;*/
+/*    inset: 0 0 0 0;*/
+/*    transform:*/
+/*            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))*/
+/*            translateZ(550px);*/
+
+/*}*/
+
+/*.banner > .slider1 > .item > img {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    object-fit: cover;*/
+/*}*/
+
+/*.banner > img{*/
+/*    width: 600px;*/
+/*    height: 450px;*/
+/*    position: sticky;*/
+/*    left: 50%;*/
+/*    transform: translateX(-50%) translateY(54%);*/
+/*    z-index: 998;*/
+/*}*/
+
+/*.banner > .heroBack{*/
+/*    width: 650px;*/
+/*    height: 500px;*/
+/*    position: sticky;*/
+/*    left: 50%;*/
+/*    transform: translateX(-50%) translateY(-46%);*/
+/*    background-color: #4300FF;*/
+/*    filter: blur(300px);*/
+/*    opacity: 0.4;*/
+/*    z-index: 997;*/
+/*}*/
+
+/*body > .about{*/
+/*    position: absolute;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background-color: white;*/
+/*    top: 100%;*/
+/*    z-index: 999;*/
+/*}*/
+

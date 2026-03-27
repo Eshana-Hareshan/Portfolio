@@ -35,7 +35,7 @@
         <i id="menu-icon" class="fa-solid fa-bars" style="color: rgb(38, 28, 193);"></i>
 
 <!--    day and night mode switch-->
-        <label>
+        <label id="dark-light-switch">
             <input type="checkbox" class="toggle-switch">
             <label class="switch">
                 <input type="checkbox" id="themeToggle">
@@ -67,23 +67,53 @@
         </label>
     </header>
 
-    <div class="banner">
-        <div class="slider1" style="--quantity: 7">
-            <div class="item" style="--position:1"><img src="assets/img/css.png" alt="css image"> </div>
-            <div class="item" style="--position:2"><img src="assets/img/html.png" alt="css image"> </div>
-            <div class="item" style="--position:3"><img src="assets/img/java.png" alt="css image"> </div>
-            <div class="item" style="--position:4"><img src="assets/img/js.png" alt="css image"> </div>
-            <div class="item" style="--position:5"><img src="assets/img/pg.png" alt="css image"> </div>
-            <div class="item" style="--position:6"><img src="assets/img/python.png" alt="css image"> </div>
-            <div class="item" style="--position:7"><img src="assets/img/sql.png" alt="css image"> </div>
+    <section class="hero-section">
+        <div class="hero-text">
+            <h2 class="subName"><b>Hey.</b> I'm</h2>
+            <h1>
+                <a>E</a><a>s</a><a>h</a><a>a</a><a>n</a><a>a </a>
+                <a> H </a>
+                <a>B</a><a>a</a><a>n</a><a>d</a><a>a</a><a>r</a><a>a</a>
+            </h1>
+            <h2>Creative Web Developer </h2>
         </div>
 
-        <img src="assets/img/hero.png" alt="hero image">
-        <div class="heroBack"></div>
+        <script>
+            const links = document.querySelectorAll('a');
 
-    </div>
+            links.forEach(link => {
+                link.addEventListener('click', function () {
+                    this.classList.remove('swing'); // reset if already added
+                    void this.offsetWidth; // force reflow (important)
+                    this.classList.add('swing');
+                });
+            });
+        </script>
+
+    </section>
+
+
+<!--    <div class="banner">-->
+<!--        <div class="slider1" style="&#45;&#45;quantity: 7">-->
+<!--            <div class="item" style="&#45;&#45;position:1"><img src="assets/img/css.png" alt="css image"> </div>-->
+<!--            <div class="item" style="&#45;&#45;position:2"><img src="assets/img/html.png" alt="css image"> </div>-->
+<!--            <div class="item" style="&#45;&#45;position:3"><img src="assets/img/java.png" alt="css image"> </div>-->
+<!--            <div class="item" style="&#45;&#45;position:4"><img src="assets/img/js.png" alt="css image"> </div>-->
+<!--            <div class="item" style="&#45;&#45;position:5"><img src="assets/img/pg.png" alt="css image"> </div>-->
+<!--            <div class="item" style="&#45;&#45;position:6"><img src="assets/img/python.png" alt="css image"> </div>-->
+<!--            <div class="item" style="&#45;&#45;position:7"><img src="assets/img/sql.png" alt="css image"> </div>-->
+<!--        </div>-->
+
+<!--        <img src="assets/img/hero.png" alt="hero image">-->
+<!--        <div class="heroBack"></div>-->
+
+<!--    </div>-->
+
+<!--    <div class="about" id="about"></div>-->
+
+
+
     <script src="background.js"></script>
-
 
 </body>
 </html>
