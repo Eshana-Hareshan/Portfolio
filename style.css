@@ -298,7 +298,15 @@ body > .about-section > .about-text{
     top: 10%;
 }
 
-
+body > .education-section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 200%;
+}
+body > .education-section > .education-text{
+    position: relative;
+}
 
 /*.banner{*/
 /*    width: 100%;*/
