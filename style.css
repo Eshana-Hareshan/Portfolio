@@ -274,6 +274,25 @@ body > .hero-section > .hero-text > h1 > a.swing {
     animation: swing 0.6s ease;
 }
 
+body > .about-section{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 100%;
+    display: flex;
+}
+
+body > .about-section > .about-text{
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+    font-size: 85px;
+    left: 50%;
+    top: 10%;
+}
+
+
+
 /*.banner{*/
 /*    width: 100%;*/
 /*    height: 100vw;*/
