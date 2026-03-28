@@ -486,7 +486,13 @@ body > .education-section > #edu > .ol , .al , .engDip , .seDip {
 
 }
 
+body > .project-section {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 300%;
 
+}
 
 /*.banner{*/
 /*    width: 100%;*/
