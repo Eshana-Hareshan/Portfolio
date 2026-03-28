@@ -442,7 +442,7 @@ body > .education-section > #card, #edu {
 
 body > .education-section > #card > .card1, .card2, .card3 , .card4 {
     position: relative;
-    background-color: #4300FF;
+    background-image: linear-gradient(#4300FF,#00CAFF,#4300FF);
     width: 17vw;
     height: 70vh;
     justify-content: space-evenly;
