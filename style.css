@@ -519,33 +519,27 @@ body > .gallery-section {
     height: 100%;
     top: 400%;
 }
-
 .banner {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    position: relative;
+    display: flex;
+    align-items: flex-start; /* keeps slider near top */
 }
 
-/* slider track */
 .slider1 {
     display: flex;
-    gap: 20px;
-    position: absolute;
-    top: 33%;
-    transform: translateY(-50%);
+    flex-wrap: nowrap;
+    margin-top: 90px; /* adjust vertical position */
     width: max-content;
-    animation: scrollLeft 20s linear infinite;
+
+    animation: seamlessScroll 30s linear infinite; /* slower for big images */
 }
 
-/* infinite smooth loop */
-@keyframes scrollLeft {
-    from {
-        transform: translate(0, -50%);
-    }
-    to {
-        transform: translate(-50%, -50%);
-    }
+/* smooth loop */
+@keyframes seamlessScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); } /* moves half of the track */
 }
 
 /* pause on hover */
@@ -553,26 +547,30 @@ body > .gallery-section {
     animation-play-state: paused;
 }
 
-/* items */
+/* slider items */
 .slider1 .item {
-    min-width: 200px;
-    height: 280px;
+    flex: 0 0 auto; /* prevent shrinking */
+    width: 350px;   /* increase width */
+    height: 550px;  /* increase height */
+    margin-right: 40px; /* spacing between items */
 }
 
-/* images */
+/* images inside items */
 .slider1 .item img {
     width: 100%;
-    height: 200%;
+    height: 100%;
     object-fit: cover;
+
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    transition: transform 0.5s;
+    transition: transform 0.3s;
 }
 
-/* hover zoom */
+/* hover effect */
 .slider1 .item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
+
 
 @media(max-width: 600px) {
     body > .gallery-section {
