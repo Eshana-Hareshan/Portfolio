@@ -504,71 +504,11 @@ body > .project-section > .project , .card{
     transform: translateX(-50%) translateY(-50%);
 }
 
-/*.banner{*/
-/*    width: 100%;*/
-/*    height: 100vw;*/
-/*    text-align: center;*/
-/*    overflow: hidden;*/
-/*    position: absolute;*/
-/*}*/
-
-/*.banner .slider1{*/
-/*    position: absolute;*/
-/*    width: 200px;*/
-/*    height: 200px;*/
-/*    top: 10%;*/
-/*    left: calc(50% - 100px);*/
-/*    transform-style: preserve-3d;*/
-/*    transform: perspective(1000px);*/
-/*    animation: autoRun 20s linear infinite;*/
-/*    z-index: 999;*/
-/*}*/
-/*@keyframes autoRun {*/
-/*    from { transform: perspective(1200px) rotateX(-16deg) rotateY(0deg); }*/
-/*    to   { transform: perspective(1200px) rotateX(-16deg) rotateY(360deg); }*/
-/*}*/
-/*.banner .slider1 .item {*/
-/*    position: absolute;*/
-/*    inset: 0 0 0 0;*/
-/*    transform:*/
-/*            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))*/
-/*            translateZ(550px);*/
-
-/*}*/
-
-/*.banner > .slider1 > .item > img {*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    object-fit: cover;*/
-/*}*/
-
-/*.banner > img{*/
-/*    width: 600px;*/
-/*    height: 450px;*/
-/*    position: sticky;*/
-/*    left: 50%;*/
-/*    transform: translateX(-50%) translateY(54%);*/
-/*    z-index: 998;*/
-/*}*/
-
-/*.banner > .heroBack{*/
-/*    width: 650px;*/
-/*    height: 500px;*/
-/*    position: sticky;*/
-/*    left: 50%;*/
-/*    transform: translateX(-50%) translateY(-46%);*/
-/*    background-color: #4300FF;*/
-/*    filter: blur(300px);*/
-/*    opacity: 0.4;*/
-/*    z-index: 997;*/
-/*}*/
-
-/*body > .about{*/
-/*    position: absolute;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    background-color: white;*/
-/*    top: 100%;*/
-/*    z-index: 999;*/
-/*}*/
-
+@media(max-width: 600px) {
+    body > .project-section {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 508%;
+    }
+}
