@@ -101,12 +101,27 @@
         <div class="about-img-frame"></div>
     </section>
 
+    <script>
+        window.addEventListener('scroll', () => {
+            const paragraph = document.querySelector('.about-text p');
+            const rect = paragraph.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // When paragraph is in view
+            if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
+                paragraph.classList.add('gradient');
+            } else {
+                paragraph.classList.remove('gradient'); // remove when out of view
+            }
+        });
+    </script>
+
     <section class="education-section" id="education">
         <div id="card">
-            <div class="card1"></div>
-            <div class="card2"></div>
-            <div class="card3"></div>
-            <div class="card4"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
         </div>
         <div id="edu">
             <div class="seDip">
@@ -181,6 +196,12 @@
                 <div class="item" style="--position:9"><img src="assets/img/img9.jpg.jpeg" alt="css image"> </div>
                 <div class="item" style="--position:10"><img src="assets/img/img10.jpg.jpeg" alt="css image"> </div>
             </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="contact">
+
         </div>
     </section>
 
