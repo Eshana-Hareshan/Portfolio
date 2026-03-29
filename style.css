@@ -358,7 +358,7 @@ body > .hero-section > .hero-text > h1 > a.swing {
 body > .about-section{
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     top: 100%;
     display: flex;
 }
@@ -576,6 +576,9 @@ body > .education-section > #edu > .ol , .al , .engDip , .seDip {
 }
 
 @media(max-width: 600px) {
+    body > .education-section {
+        position: absolute;
+    }
     body > .education-section > #card, #edu {
         flex-direction: column;
         justify-content: center;
@@ -587,12 +590,11 @@ body > .education-section > #edu > .ol , .al , .engDip , .seDip {
         left: 51%;
     }
     body > .education-section > #edu > .ol , .al , .engDip , .seDip {
-        position: relative;
         width: 50vw;
         height: 70vh;
         margin: 3vw;
-        left: 29%;
-        top: -290vh;
+        left: 22vh;
+        top: -290vh ;
 
     }
 
@@ -632,6 +634,8 @@ body > .gallery-section {
     height: 100%;
     top: 400%;
 }
+
+/*sleamless photo moving*/
 .banner {
     width: 100%;
     height: 100vh;
