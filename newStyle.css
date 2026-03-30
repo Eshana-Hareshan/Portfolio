@@ -47,7 +47,7 @@ body{
     font-weight: 600;
     color: black;
     text-decoration: none;
-    cursor: pointer;
+    /*cursor: pointer;*/
     transition: all 0.9s;
 }
 .dark-mode .navbar-logo{
@@ -134,7 +134,7 @@ body.dark-mode {
 /* Slider styling */
 .slider {
     position: absolute;
-    cursor: pointer;
+    /*cursor: pointer;*/
     top: 0;
     left: 0;
     right: 0;
