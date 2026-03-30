@@ -309,3 +309,25 @@ input:checked + .slider:after {
     position: sticky !important;
     width: 460px;
 }
+@media(max-width: 880px){
+    .about-section{
+        width: 100%;
+        height: 800px;
+    }
+    .about-content{
+        width: fit-content;
+        top: 500px;
+        left: 30px;
+    }
+    .about-content p{
+        font-size: 40px;
+    }
+    .about-img{
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .about-img img{
+        width: 330px;
+    }
+}
