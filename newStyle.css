@@ -179,6 +179,65 @@ input:checked + .slider:after {
     right: auto;
 }
 
+@media(max-width: 880px){
+
+    .navbar-container{
+        position: relative;
+    }
+    .navbar-container .navbar-menu{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px ;
+        position: absolute;
+        height: 50vh;
+        width: 200px;
+        top: 110px;
+        right: 0;
+        padding: 20px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        z-index: 1000;
+        background: white;
+        transition: all 0.9s;
+    }
+
+    .dark-mode .navbar-container .navbar-menu {
+        background: #121212;
+        box-shadow: 0 10px 10px rgba(255, 255, 255, 0.5);
+
+    }
+
+    .navbar-container .navbar-menu.active {
+        display: flex !important;
+    }
+
+    .navbar-toggler{
+        display: block;
+    }
+
+    .navbar-toggler.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggler.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggler.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+@media(max-width: 480px){
+    .navbar-container{
+        padding: 0 5px;
+    }
+    .navbar-logo{
+        font-size: 20px;
+        padding: 3px 15px ;
+    }
+}
 
 .hero-section{
     position:relative;
