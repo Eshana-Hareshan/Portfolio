@@ -256,7 +256,7 @@ input:checked + .slider:after {
     position:relative;
     z-index:1;
     text-align:center;
-    padding-top:200px;
+    padding-top:180px;
     color:black;
 }
 .hero-content h1 {
