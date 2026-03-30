@@ -1,217 +1,217 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="eshana,hareshan,bandara,eshanahbandara,portfolio,web, html, css, javascript, js, java, python">
-    <meta name="description" content="World best web development tutorials">
-    <meta name="author" content="Eshana H Bandara">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="keywords" content="eshana,hareshan,bandara,eshanahbandara,portfolio,web, html, css, javascript, js, java, python">-->
+<!--    <meta name="description" content="World best web development tutorials">-->
+<!--    <meta name="author" content="Eshana H Bandara">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="assets/lib/normalize.css">
+<!--    <link rel="stylesheet" href="style.css">-->
+<!--    <link rel="stylesheet" href="assets/lib/normalize.css">-->
 
-    <link rel="stylesheet" href="assets/lib/fontawesome/css/all.min.css">
-
-
-    <title>Portfolio</title>
-</head>
-<body>
-
-    <canvas></canvas>
-    <canvas></canvas>
+<!--    <link rel="stylesheet" href="assets/lib/fontawesome/css/all.min.css">-->
 
 
-    <header>
-        <div class="nav-background"></div>
-        <a href="#" class="logo"><img class="logo" src="assets/img/logo.png" alt="logo"></a>
-<!--    navigation bar-->
-        <nav class="nav-links">
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
-                <a href="#project">Project</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact">Contact</a>
-        </nav>
-        <i id="menu-icon" class="fa-solid fa-bars" style="color: rgb(38, 28, 193);"></i>
+<!--    <title>Portfolio</title>-->
+<!--</head>-->
+<!--<body>-->
 
-<!--    day and night mode switch-->
-        <label id="dark-light-switch">
-            <input type="checkbox" class="toggle-switch">
-            <label class="switch">
-                <input type="checkbox" id="themeToggle">
-                <span class="slider"></span>
-            </label>
-
-            <script>
-                const toggle = document.getElementById('themeToggle');
-                const body = document.body;
-
-                // Load saved theme from localStorage
-                if (localStorage.getItem('theme') === 'dark') {
-                    body.classList.add('dark-mode');
-                    toggle.checked = true;
-                }
-
-                // Toggle theme on change
-                toggle.addEventListener('change', () => {
-                    if (toggle.checked) {
-                        body.classList.add('dark-mode');
-                        localStorage.setItem('theme', 'dark');
-                    } else {
-                        body.classList.remove('dark-mode');
-                        localStorage.setItem('theme', 'light');
-                    }
-                    if (window.updateBackgroundTheme) window.updateBackgroundTheme();
-                });
-            </script>
-        </label>
-    </header>
-
-    <section class="hero-section">
-        <div class="hero-text">
-            <h2 class="subName"><b>Hey.</b> I'm</h2>
-            <h1>
-                <a>E</a><a>s</a><a>h</a><a>a</a><a>n</a><a>a </a>
-                <a> H </a>
-                <a>B</a><a>a</a><a>n</a><a>d</a><a>a</a><a>r</a><a>a</a>
-            </h1>
-            <h2>Creative Web Developer </h2>
-        </div>
-
-        <script>
-            const links = document.querySelectorAll('a');
-
-            links.forEach(link => {
-                link.addEventListener('click', function () {
-                    this.classList.remove('swing'); // reset if already added
-                    void this.offsetWidth; // force reflow (important)
-                    this.classList.add('swing');
-                });
-            });
-        </script>
-
-    </section>
-
-    <section class="about-section" id="about">
-        <div class="about-text">
-            <p>I CRAFT MODERN WEBSITES THAT BLEND SLEEK DESIGN WITH SEAMLESS PERFORMANCE.</p>
-        </div>
-        <div class="about-img-background"></div>
-            <img class="about-img" src="assets/img/me.png" alt="about">
-        <div class="about-img-frame"></div>
-    </section>
-
-    <script>
-        window.addEventListener('scroll', () => {
-            const paragraph = document.querySelector('.about-text p');
-            const rect = paragraph.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-
-            // When paragraph is in view
-            if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
-                paragraph.classList.add('gradient');
-            } else {
-                paragraph.classList.remove('gradient'); // remove when out of view
-            }
-        });
-    </script>
-
-    <section class="education-section" id="education">
-        <div id="card">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-        </div>
-        <div id="edu">
-            <div class="seDip">
-                <br>
-                <h1>2025 - Present</h1>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <h2>High Diploma In Software Engineer</h2>
-                <br>
-                <h3>IJSE</h3>
-            </div>
-            <div class="engDip">
-                <br>
-                <h1>2020 - Present</h1>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <h2>Diploma In English</h2>
-                <br>
-                <h3>Britishway</h3>
-            </div>
-            <div class="al">
-                <br>
-                <h1>2020 - 2022</h1>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <h2>G.C.E Advance Level</h2>
-                <h3>Technology Stream</h3>
-                <br>
-                <h3>St. Aloysius Collage, Rathanapura.</h3>
-            </div>
-            <div class="ol">
-                <br>
-                <h1>2018 - 2019</h1>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <h2>G.C.E Ordinary Level</h2>
-                <br>
-                <h3>St. Aloysius Collage, Rathanapura.</h3>
-            </div>
-        </div>
-
-    </section>
-
-    <section class="project-section" id="project">
-        <div class="project">
-            <div class="project1">Project 01</div>
-        </div>
-        <div class="card1">
-            <div class="card1"></div>
-        </div>
-    </section>
-
-    <section class="gallery-section" id="gallery">
-        <div class="banner">
-            <div class="slider1" style="--quantity: 10">
-<!--                ORIGINAL-->
-                <div class="item" style="--position:1"><img src="assets/img/img1.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:2"><img src="assets/img/img2.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:3"><img src="assets/img/img3.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:4"><img src="assets/img/img4.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:5"><img src="assets/img/img5.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:6"><img src="assets/img/img6.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:7"><img src="assets/img/img7.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:8"><img src="assets/img/img8.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:9"><img src="assets/img/img9.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:10"><img src="assets/img/img10.jpg.jpeg" alt="css image"> </div>
-<!--                DUBLICATES-->
-                <div class="item" style="--position:1"><img src="assets/img/img1.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:2"><img src="assets/img/img2.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:3"><img src="assets/img/img3.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:4"><img src="assets/img/img4.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:5"><img src="assets/img/img5.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:6"><img src="assets/img/img6.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:7"><img src="assets/img/img7.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:8"><img src="assets/img/img8.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:9"><img src="assets/img/img9.jpg.jpeg" alt="css image"> </div>
-                <div class="item" style="--position:10"><img src="assets/img/img10.jpg.jpeg" alt="css image"> </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-section" id="#contact">
-        <div class="contact">
-
-        </div>
-    </section>
+<!--    <canvas></canvas>-->
+<!--    <canvas></canvas>-->
 
 
+<!--    <header>-->
+<!--        <div class="nav-background"></div>-->
+<!--        <a href="#" class="logo"><img class="logo" src="assets/img/logo.png" alt="logo"></a>-->
+<!--&lt;!&ndash;    navigation bar&ndash;&gt;-->
+<!--        <nav class="nav-links">-->
+<!--                <a href="#about">About</a>-->
+<!--                <a href="#education">Education</a>-->
+<!--                <a href="#project">Project</a>-->
+<!--                <a href="#gallery">Gallery</a>-->
+<!--                <a href="#contact">Contact</a>-->
+<!--        </nav>-->
+<!--        <i id="menu-icon" class="fa-solid fa-bars" style="color: rgb(38, 28, 193);"></i>-->
+
+<!--&lt;!&ndash;    day and night mode switch&ndash;&gt;-->
+<!--        <label id="dark-light-switch">-->
+<!--            <input type="checkbox" class="toggle-switch">-->
+<!--            <label class="switch">-->
+<!--                <input type="checkbox" id="themeToggle">-->
+<!--                <span class="slider"></span>-->
+<!--            </label>-->
+
+<!--            <script>-->
+<!--                const toggle = document.getElementById('themeToggle');-->
+<!--                const body = document.body;-->
+
+<!--                // Load saved theme from localStorage-->
+<!--                if (localStorage.getItem('theme') === 'dark') {-->
+<!--                    body.classList.add('dark-mode');-->
+<!--                    toggle.checked = true;-->
+<!--                }-->
+
+<!--                // Toggle theme on change-->
+<!--                toggle.addEventListener('change', () => {-->
+<!--                    if (toggle.checked) {-->
+<!--                        body.classList.add('dark-mode');-->
+<!--                        localStorage.setItem('theme', 'dark');-->
+<!--                    } else {-->
+<!--                        body.classList.remove('dark-mode');-->
+<!--                        localStorage.setItem('theme', 'light');-->
+<!--                    }-->
+<!--                    if (window.updateBackgroundTheme) window.updateBackgroundTheme();-->
+<!--                });-->
+<!--            </script>-->
+<!--        </label>-->
+<!--    </header>-->
+
+<!--    <section class="hero-section">-->
+<!--        <div class="hero-text">-->
+<!--            <h2 class="subName"><b>Hey.</b> I'm</h2>-->
+<!--            <h1>-->
+<!--                <a>E</a><a>s</a><a>h</a><a>a</a><a>n</a><a>a </a>-->
+<!--                <a> H </a>-->
+<!--                <a>B</a><a>a</a><a>n</a><a>d</a><a>a</a><a>r</a><a>a</a>-->
+<!--            </h1>-->
+<!--            <h2>Creative Web Developer </h2>-->
+<!--        </div>-->
+
+<!--        <script>-->
+<!--            const links = document.querySelectorAll('a');-->
+
+<!--            links.forEach(link => {-->
+<!--                link.addEventListener('click', function () {-->
+<!--                    this.classList.remove('swing'); // reset if already added-->
+<!--                    void this.offsetWidth; // force reflow (important)-->
+<!--                    this.classList.add('swing');-->
+<!--                });-->
+<!--            });-->
+<!--        </script>-->
+
+<!--    </section>-->
+
+<!--    <section class="about-section" id="about">-->
+<!--        <div class="about-text">-->
+<!--            <p>I CRAFT MODERN WEBSITES THAT BLEND SLEEK DESIGN WITH SEAMLESS PERFORMANCE.</p>-->
+<!--        </div>-->
+<!--        <div class="about-img-background"></div>-->
+<!--            <img class="about-img" src="assets/img/me.png" alt="about">-->
+<!--        <div class="about-img-frame"></div>-->
+<!--    </section>-->
+
+<!--    <script>-->
+<!--        window.addEventListener('scroll', () => {-->
+<!--            const paragraph = document.querySelector('.about-text p');-->
+<!--            const rect = paragraph.getBoundingClientRect();-->
+<!--            const windowHeight = window.innerHeight;-->
+
+<!--            // When paragraph is in view-->
+<!--            if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {-->
+<!--                paragraph.classList.add('gradient');-->
+<!--            } else {-->
+<!--                paragraph.classList.remove('gradient'); // remove when out of view-->
+<!--            }-->
+<!--        });-->
+<!--    </script>-->
+
+<!--    <section class="education-section" id="education">-->
+<!--        <div id="card">-->
+<!--            <div class="card"></div>-->
+<!--            <div class="card"></div>-->
+<!--            <div class="card"></div>-->
+<!--            <div class="card"></div>-->
+<!--        </div>-->
+<!--        <div id="edu">-->
+<!--            <div class="seDip">-->
+<!--                <br>-->
+<!--                <h1>2025 - Present</h1>-->
+<!--                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+<!--                <h2>High Diploma In Software Engineer</h2>-->
+<!--                <br>-->
+<!--                <h3>IJSE</h3>-->
+<!--            </div>-->
+<!--            <div class="engDip">-->
+<!--                <br>-->
+<!--                <h1>2020 - Present</h1>-->
+<!--                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+<!--                <h2>Diploma In English</h2>-->
+<!--                <br>-->
+<!--                <h3>Britishway</h3>-->
+<!--            </div>-->
+<!--            <div class="al">-->
+<!--                <br>-->
+<!--                <h1>2020 - 2022</h1>-->
+<!--                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+<!--                <h2>G.C.E Advance Level</h2>-->
+<!--                <h3>Technology Stream</h3>-->
+<!--                <br>-->
+<!--                <h3>St. Aloysius Collage, Rathanapura.</h3>-->
+<!--            </div>-->
+<!--            <div class="ol">-->
+<!--                <br>-->
+<!--                <h1>2018 - 2019</h1>-->
+<!--                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+<!--                <h2>G.C.E Ordinary Level</h2>-->
+<!--                <br>-->
+<!--                <h3>St. Aloysius Collage, Rathanapura.</h3>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </section>-->
+
+<!--    <section class="project-section" id="project">-->
+<!--        <div class="project">-->
+<!--            <div class="project1">Project 01</div>-->
+<!--        </div>-->
+<!--        <div class="card1">-->
+<!--            <div class="card1"></div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+<!--    <section class="gallery-section" id="gallery">-->
+<!--        <div class="banner">-->
+<!--            <div class="slider1" style="&#45;&#45;quantity: 10">-->
+<!--&lt;!&ndash;                ORIGINAL&ndash;&gt;-->
+<!--                <div class="item" style="&#45;&#45;position:1"><img src="assets/img/img1.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:2"><img src="assets/img/img2.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:3"><img src="assets/img/img3.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:4"><img src="assets/img/img4.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:5"><img src="assets/img/img5.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:6"><img src="assets/img/img6.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:7"><img src="assets/img/img7.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:8"><img src="assets/img/img8.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:9"><img src="assets/img/img9.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:10"><img src="assets/img/img10.jpg.jpeg" alt="css image"> </div>-->
+<!--&lt;!&ndash;                DUBLICATES&ndash;&gt;-->
+<!--                <div class="item" style="&#45;&#45;position:1"><img src="assets/img/img1.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:2"><img src="assets/img/img2.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:3"><img src="assets/img/img3.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:4"><img src="assets/img/img4.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:5"><img src="assets/img/img5.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:6"><img src="assets/img/img6.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:7"><img src="assets/img/img7.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:8"><img src="assets/img/img8.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:9"><img src="assets/img/img9.jpg.jpeg" alt="css image"> </div>-->
+<!--                <div class="item" style="&#45;&#45;position:10"><img src="assets/img/img10.jpg.jpeg" alt="css image"> </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+<!--    <section class="contact-section" id="contact">-->
+<!--        <div class="contact">-->
+
+<!--        </div>-->
+<!--    </section>-->
 
 
 
 
-    <script src="background.js"></script>
-    <script src="script.js"></script>
 
-</body>
-</html>
+
+<!--    <script src="background.js"></script>-->
+<!--    <script src="script.js"></script>-->
+
+<!--</body>-->
+<!--</html>-->
