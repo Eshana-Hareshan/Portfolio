@@ -687,7 +687,7 @@ body > .gallery-section {
 .slider1 .item:hover img {
     transform: scale(1.08);
 }
-
+`
 
 @media(max-width: 600px) {
     body > .gallery-section {

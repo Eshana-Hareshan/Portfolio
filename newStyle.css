@@ -857,3 +857,64 @@ input:checked + .slider:after {
         top: 150px
     }
 }
+
+.gallery-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 400%;
+}
+
+/*sleamless photo moving*/
+.banner {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start; /* keeps slider near top */
+}
+
+.slider1 {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 90px; /* adjust vertical position */
+    width: max-content;
+
+    animation: seamlessScroll 30s linear infinite; /* slower for big images */
+}
+
+/* smooth loop */
+@keyframes seamlessScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); } /* moves half of the track */
+}
+
+/* pause on hover */
+.banner:hover .slider1 {
+    animation-play-state: paused;
+}
+
+/* slider items */
+.slider1 .item {
+    flex: 0 0 auto; /* prevent shrinking */
+    width: 350px;   /* increase width */
+    height: 550px;  /* increase height */
+    margin-right: 40px; /* spacing between items */
+}
+
+/* images inside items */
+.slider1 .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+
+/* hover effect */
+.slider1 .item:hover img {
+    transform: scale(1.08);
+}
+
