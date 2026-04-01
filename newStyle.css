@@ -603,6 +603,7 @@ input:checked + .slider:after {
     z-index: var(--item2-z-index);
     opacity: var(--item2-opacity);
 }
+
 .carousel .list .item:nth-child(1){
     transform: var(--item1-transform);
     filter: var(--item1-filter);

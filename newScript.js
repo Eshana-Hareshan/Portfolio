@@ -93,3 +93,31 @@ function animateBubbles() {
 }
 
 animateBubbles();
+
+// Skill Animation
+let nextButton = document.getElementById('next');
+let prevButton = document.getElementById('prev');
+let carousel = document.querySelector('.carousel');
+let listHTML = document.querySelector('.carousel .list');
+
+nextButton.onclick = function () {
+    showSlider('next')
+}
+prevButton.onclick = function () {
+    showSlider('prev')
+}
+
+const showSlider = (type) => {
+
+    carousel.classList.remove('prev','next');
+    let item = document.querySelectorAll('.carousel .list .item');
+    if (type === 'next') {
+        listHTML.appendChild(item[0]);
+        carousel.classList.add('next');
+    }else{
+        let positionLast  = item.length-1;
+        listHTML.prepend(item[positionLast]);
+        carousel.classList.add('prev');
+    }
+
+}
