@@ -857,12 +857,39 @@ input:checked + .slider:after {
         top: 150px
     }
 }
-
+/*GALLERY*/
 .gallery-section {
     position: relative;
     width: 100%;
     height: 100%;
     top: 400%;
+    border: black solid 1px;
+    border-radius: 10px;
+}
+.dark-mode .gallery-section{
+    border: white solid 1px;
+}
+.gallery-content{
+    position: absolute;
+    width: 7%;
+    height: 98%;
+    background-color: white;
+    z-index: 1;
+    top: 5px;
+    left: 1px;
+}
+.dark-mode .gallery-content{
+    background-color: black;
+}
+.gallery-content h1{
+    position: relative;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 10px ;
+    font-size: 40px;
+    z-index: 1;
+    left: 60px;
+    top: 130px;
 }
 
 /*sleamless photo moving*/
@@ -877,7 +904,7 @@ input:checked + .slider:after {
 .slider1 {
     display: flex;
     flex-wrap: nowrap;
-    margin-top: 90px; /* adjust vertical position */
+    margin-top: 100px; /* adjust vertical position */
     width: max-content;
 
     animation: seamlessScroll 30s linear infinite; /* slower for big images */
