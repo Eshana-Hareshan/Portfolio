@@ -510,3 +510,117 @@ input:checked + .slider:after {
     height: 700px;
     top: 100px;
 }
+
+:root{
+    --item1-transform: translate(-100%, -5%) scale(1.5);
+    --item1-filter: blur(30px);
+    --item1-z-index: 11;
+    --item1-opacity: 0;
+
+    --item2-transform: translate(0%, 0%);
+    --item2-filter: blur(0);
+    --item2-z-index: 10;
+    --item2-opacity: 1;
+
+    --item3-transform: translate(50%, 10%) scale(0.8);
+    --item3-filter: blur(10px);
+    --item3-z-index: 9;
+    --item3-opacity: 1;
+
+    --item4-transform: translate(90%, 20%) scale(0.5);
+    --item4-filter: blur(30px);
+    --item4-z-index: 8;
+    --item4-opacity: 1;
+
+    --item5-transform: translate(120%, 30%) scale(0.3);
+    --item5-filter: blur(40px);
+    --item5-z-index: 7;
+    --item5-opacity: 0;
+
+    --item6-transform: translate(150%, 40%) scale(0.1);
+    --item6-filter: blur(50px);
+    --item6-z-index: 6;
+    --item6-opacity: 0;
+
+}
+.carousel{
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    top: 100px;
+}
+
+.carousel .list{
+    position: absolute;
+    top: 0;
+    width: 1140px;
+    max-width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80%;
+}
+
+.carousel .list .item{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    font-size: 15px;
+}
+.carousel .list .item img{
+    width: 30%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel .list .item:nth-child(1){
+    transform: var(--item1-transform);
+    filter: var(--item1-filter);
+    z-index: var(--item1-z-index);
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel .list .item:nth-child(3){
+    transform: var(--item3-transform);
+    filter: var(--item3-filter);
+    z-index: var(--item3-z-index);
+    opacity: var(--item3-opacity);
+}
+.carousel .list .item:nth-child(4){
+    transform: var(--item4-transform);
+    filter: var(--item4-filter);
+    z-index: var(--item4-z-index);
+    opacity: var(--item4-opacity);
+}
+.carousel .list .item:nth-child(5){
+    transform: var(--item5-transform);
+    filter: var(--item5-filter);
+    z-index: var(--item5-z-index);
+    opacity: var(--item5-opacity);
+    pointer-events: none;
+}
+.carousel .list .item:nth-child(6){
+    transform: var(--item6-transform);
+    filter: var(--item6-filter);
+    z-index: var(--item6-z-index);
+    opacity: var(--item6-opacity);
+    pointer-events: none;
+}
+
+
+
+@keyframes showContent {
+    from{
+        transform: translateY(50px);
+        filter: blur(30px);
+    }to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+
