@@ -106,8 +106,11 @@ nextButton.onclick = function () {
 prevButton.onclick = function () {
     showSlider('prev')
 }
+let unAccesptClick;
 
 const showSlider = (type) => {
+    nextButton.style.pointerEvents = 'none';
+    prevButton.style.pointerEvents = 'none';
 
     carousel.classList.remove('prev','next');
     let item = document.querySelectorAll('.carousel .list .item');
@@ -120,4 +123,10 @@ const showSlider = (type) => {
         carousel.classList.add('prev');
     }
 
+    clearTimeout(unAccesptClick);
+
+    unAccesptClick = setTimeout(()=>{
+        nextButton.style.pointerEvents = 'auto';
+        prevButton.style.pointerEvents = 'auto';
+    },2000);
 }
