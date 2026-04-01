@@ -394,7 +394,7 @@ input:checked + .slider:after {
     position: absolute;
     writing-mode: vertical-rl;
     text-orientation: upright;
-    letter-spacing: 10px; /* controls spacing between letters */
+    letter-spacing: 10px;
     font-size: 40px;
     left: -100px;
     top: -250px;
@@ -520,7 +520,7 @@ input:checked + .slider:after {
     position: absolute;
     writing-mode: vertical-rl;
     text-orientation: upright;
-    letter-spacing: 10px; /* controls spacing between letters */
+    letter-spacing: 10px ;
     font-size: 40px;
     left: 60px;
     top: 200px;
@@ -832,7 +832,7 @@ input:checked + .slider:after {
     .skills-content h1{
         writing-mode: horizontal-tb;
         text-orientation: upright;
-        letter-spacing: 10px; /* controls spacing between letters */
+        letter-spacing: 10px;
         font-size: 40px;
         top: 55px;
         left: 50%;
