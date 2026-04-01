@@ -508,6 +508,22 @@ input:checked + .slider:after {
     position: relative;
     width: 100%;
     height: 700px;
+    border: black solid 1px;
+    border-radius: 10px;
+}
+.dark-mode .skills-section{
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.skills-content h1{
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 10px; /* controls spacing between letters */
+    font-size: 40px;
+    left: 60px;
+    top: 200px;
 }
 
 :root{
@@ -669,16 +685,20 @@ input:checked + .slider:after {
     pointer-events: none;
 }
 .carousel .list .item .intro .title{
-    font-size: 2em;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 10px;
     line-height: 0.8em;
 }
-.carousel .list .item .intro .topic{
-    font-size: 4em;
-    font-weight: 500;
-}
+/*.carousel .list .item .intro .topic{*/
+/*    font-size: 4em;*/
+/*    font-weight: 500;*/
+/*}*/
+
 .carousel .list .item .intro .des{
-    font-size: small;
+    font-size:20px ;
 }
+
 .carousel .list .item .intro .seeMore{
     background-color: transparent;
     border: none;
