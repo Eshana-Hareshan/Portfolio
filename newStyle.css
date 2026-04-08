@@ -281,19 +281,19 @@ input:checked + .slider:after {
         padding-top: 150px;
     }
     .hero-content h1 {
-        font-size: clamp(38px, 10vw, 75px);
+        font-size: 80px;
     }
     .hero-content h2 {
-        font-size: clamp(28px, 8vw, 45px);
+        font-size: 40px;
     }
     .hero-content h3 {
-        font-size: clamp(28px, 8vw, 45px);
+        font-size: 40px;
     }
 }
 
 .about-section{
     width:100%;
-    min-height: 100vh;
+    min-height:700px;
     border: black solid 1px;
     border-radius: 10px;
 }
@@ -328,17 +328,23 @@ input:checked + .slider:after {
     position: absolute;
     writing-mode: vertical-rl;
     text-orientation: upright;
-    letter-spacing: 10px; /* controls spacing between letters */
+    letter-spacing: 10px;
     font-size: 40px;
     left: 60px;
     top: 200px;
 }
 .about-para span {
-    color: #e2e8f0;
-    transition: color 0.60s linear;
+    color: black;
+    transition: color 0.4s linear;
+}
+.dark-mode .about-para span{
+    color: white;
 }
 
 .about-para span.active {
+    color: #4300FF;
+}
+.dark-mode .about-para.active {
     color: #38bdf8;
 }
 @media(max-width: 720px){
@@ -469,7 +475,7 @@ input:checked + .slider:after {
     }
     .card {
         position: relative;
-        width: 100%;
+        width: 80%;
     }
 }
 
