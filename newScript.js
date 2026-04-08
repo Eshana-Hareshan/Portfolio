@@ -46,7 +46,7 @@ window.addEventListener('scroll', () => {
     const screenHeight = window.innerHeight;
 
     // progress BEFORE and INSIDE section
-    let progress = (screenHeight - rect.top) / (screenHeight + rect.height);
+    let progress = (window.innerHeight - rect.top) / window.innerHeight;
 
     // clamp between 0 and 1
     progress = Math.max(0, Math.min(1, progress));
