@@ -176,4 +176,10 @@ const showSlider = (type) => {
         nextButton.style.pointerEvents = 'auto';
         prevButton.style.pointerEvents = 'auto';
     },2000);
+
+    // animate.(autoAnimate);
+    //
+    // autoAnimate = setInterval(() => {
+    //     nextButton.style.pointerEvents = 'auto';
+    // },3000);
 }
