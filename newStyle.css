@@ -296,6 +296,8 @@ input:checked + .slider:after {
     height:700px;
     border: black solid 1px;
     border-radius: 10px;
+    margin: 1px;
+
 }
 .dark-mode .about-section{
     border: white solid 1px;
@@ -418,6 +420,8 @@ input:checked + .slider:after {
     padding: var(--spacing-xxl) var(--spacing-l);
     border: 1px solid black;
     border-radius: 10px;
+    margin: 1px;
+
 }
 .dark-mode .education-section{
     border: 1px solid white;
@@ -544,14 +548,32 @@ input:checked + .slider:after {
     }
 }
 /*PROJECT SECTION*/
-/**{*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    -webkit-box-sizing: border-box;*/
-/*    box-sizing: border-box;*/
-/*}*/
+
+.projects-section{
+    position: relative;
+    width: 100%;
+    height: 700px;
+    border: 1px solid black;
+    margin: 1px;
+}
+.dark-mode .projects-section{
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.vertical-p-text{
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 10px;
+    font-size: 40px;
+    left: -60px;
+}
 
 .wrapper{
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%);
     width: 90%;
     margin: 0 auto;
     max-width: 80rem;
@@ -837,6 +859,8 @@ button:nth-child(2){
     height: 700px;
     border: black solid 1px;
     border-radius: 10px;
+    margin: 1px;
+
 }
 .dark-mode .skills-section{
     border: 1px solid white;
@@ -1191,6 +1215,8 @@ button:nth-child(2){
     height: 700px;
     border: black solid 1px;
     border-radius: 10px;
+    margin: 1px;
+
 }
 .dark-mode .gallery-section{
     border: white solid 1px;
@@ -1317,6 +1343,7 @@ button:nth-child(2){
     justify-content: center;
     align-items: center;
     padding: 50px 20px;
+    margin: 1px;
 }
 .dark-mode .contact-section{
     border: white solid 1px;
