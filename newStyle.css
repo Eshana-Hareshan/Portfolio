@@ -368,7 +368,7 @@ input:checked + .slider:after {
     .about-text {
         position: relative;
         writing-mode: horizontal-tb;
-        top: 0;
+        top: 20px;
         left: 0;
         margin-bottom: 30px;
         font-size: 36px;
@@ -393,9 +393,8 @@ input:checked + .slider:after {
         top: 0;
         right: 0;
         left: 0;
-        margin-top: 30px;
     }
-    .about-content p {
+    .about-content .about-para {
         font-size: clamp(28px, 6vw, 40px);
     }
 }
@@ -430,7 +429,7 @@ input:checked + .slider:after {
 .education-container{
     position: relative;
 }
-.vertical-text {
+.vertical-e-text {
     position: absolute;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -518,14 +517,14 @@ input:checked + .slider:after {
 @media(max-width: 720px){
     .education-section {
         height: auto;
-        padding: 80px 20px;
+        /*padding: 80px 20px;*/
         flex-direction: column;
     }
     .education-container {
         width: 100%;
         margin-bottom: 40px;
     }
-    .vertical-text {
+    .vertical-e-text {
         position: relative;
         writing-mode: horizontal-tb;
         top: 0;
@@ -545,6 +544,9 @@ input:checked + .slider:after {
     .card {
         position: relative;
         width: 80%;
+        left: 50%;
+        top: -50px;
+        transform: translateX(-50%);
     }
 }
 /*PROJECT SECTION*/
@@ -841,8 +843,20 @@ button:nth-child(2){
     }
 }
 
-@media screen and (max-width: 48rem){
-    .col{
+@media (max-width: 720px){
+    .projects-section{
+        min-height:800px;
+    }
+    .vertical-p-text{
+        writing-mode: horizontal-tb;
+        left: 50%;
+        transform: translateX(-50%);
+        top:-70px;
+    }
+    .wrapper{
+        top:130px;
+    }
+        .col{
         width: calc(100% - 2rem);
     }
 }
