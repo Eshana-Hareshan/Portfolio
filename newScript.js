@@ -25,54 +25,7 @@ toggle.addEventListener('change', () => {
     }
 });
 
-// about animation
-const paragraph = document.querySelector('.about-para');
-const text = paragraph.innerText;
-
-paragraph.innerHTML = "";
-
-// wrap letters
-text.split("").forEach(letter => {
-    const span = document.createElement("span");
-    span.innerText = letter;
-    paragraph.appendChild(span);
-});
-
-const spans = document.querySelectorAll('.about-para span');
-
-window.addEventListener('scroll', () => {
-    const section = document.querySelector('#about');
-    const rect = section.getBoundingClientRect();
-    const screenHeight = window.innerHeight;
-
-    // progress BEFORE and INSIDE section
-    let progress = (window.innerHeight - rect.top) / window.innerHeight;
-
-    // clamp between 0 and 1
-    progress = Math.max(0, Math.min(1, progress));
-
-    // if section fully passed → keep full blue
-    if (rect.top < 0 && rect.bottom < screenHeight) {
-        progress = 1;
-    }
-
-    // if scrolling above section → reset
-    if (rect.top > screenHeight) {
-        progress = 0;
-    }
-
-    const activeCount = Math.floor(progress * spans.length);
-
-    spans.forEach((span, index) => {
-        if (index < activeCount) {
-            span.classList.add('active');
-        } else {
-            span.classList.remove('active');
-        }
-    });
-});
-
-// bubble animation
+// BUBBLE ANIMATION
 const canvas = document.getElementById('bubbleCanvas');
 const ctx = canvas.getContext('2d');
 let bubbles = [];
@@ -141,7 +94,55 @@ function animateBubbles() {
 
 animateBubbles();
 
-// Skill Animation
+// ABOUT CONTENT ANIMATION
+
+const paragraph = document.querySelector('.about-para');
+const text = paragraph.innerText;
+
+paragraph.innerHTML = "";
+
+// wrap letters
+text.split("").forEach(letter => {
+    const span = document.createElement("span");
+    span.innerText = letter;
+    paragraph.appendChild(span);
+});
+
+const spans = document.querySelectorAll('.about-para span');
+
+window.addEventListener('scroll', () => {
+    const section = document.querySelector('#about');
+    const rect = section.getBoundingClientRect();
+    const screenHeight = window.innerHeight;
+
+    // progress BEFORE and INSIDE section
+    let progress = (window.innerHeight - rect.top) / window.innerHeight;
+
+    // clamp between 0 and 1
+    progress = Math.max(0, Math.min(1, progress));
+
+    // if section fully passed → keep full blue
+    if (rect.top < 0 && rect.bottom < screenHeight) {
+        progress = 1;
+    }
+
+    // if scrolling above section → reset
+    if (rect.top > screenHeight) {
+        progress = 0;
+    }
+
+    const activeCount = Math.floor(progress * spans.length);
+
+    spans.forEach((span, index) => {
+        if (index < activeCount) {
+            span.classList.add('active');
+        } else {
+            span.classList.remove('active');
+        }
+    });
+});
+
+// SKILL SECTION ANIMATION
 let nextButton = document.getElementById('next');
 let prevButton = document.getElementById('prev');
 let carousel = document.querySelector('.carousel');
@@ -153,6 +154,11 @@ nextButton.onclick = function () {
 prevButton.onclick = function () {
     showSlider('prev')
 }
+
+// autoAnimate = setInterval(() => {
+//     nextButton.style.pointerEvents = 'auto';
+// },3000);
+
 let unAccesptClick;
 
 const showSlider = (type) => {
@@ -177,9 +183,4 @@ const showSlider = (type) => {
         prevButton.style.pointerEvents = 'auto';
     },2000);
 
-    // animate.(autoAnimate);
-    //
-    // autoAnimate = setInterval(() => {
-    //     nextButton.style.pointerEvents = 'auto';
-    // },3000);
 }
