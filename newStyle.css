@@ -1224,14 +1224,40 @@ button:nth-child(2){
 }
 
 /*ASSIGNMENT*/
-.assingment-section{
+.assignment-section{
     position: relative;
     width: 100%;
     height: 700px;
 }
-.assingment-container{
-    position: absolute;
+
+.assignment-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+
+}
+.assignment-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: black solid 1px;
+    border-radius: 10px;
+    margin: 1px;
+}
+.dark-mode .assignment-section{
+    border: white solid 1px;
+}
+.vertical-a-text{
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 10px ;
+    font-size: 40px;
+    left: 60px;
+    top: 100px;
 }
 :root {
       --card-height: 400px;
@@ -1327,7 +1353,7 @@ button:nth-child(2){
 
 .assignment-card:hover .character {
     opacity: 1;
-    transform: translate3d(0%, -30%, 100px);
+    transform: translate3d(0%, -5%, 100px);
 }
 
 /*BUTTON*/
@@ -1336,12 +1362,13 @@ button:nth-child(2){
     margin: 40px auto;
     text-align: center;
 }
+
 button {
-    margin: 50px;
+    margin: 0;
 }
 .custom-btn {
     width: 130px;
-    height: 40px;
+    height: 60px;
     color: #fff;
     border-radius: 5px;
     padding: 10px 25px;
