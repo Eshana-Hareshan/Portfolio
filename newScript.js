@@ -155,11 +155,22 @@ prevButton.onclick = function () {
     showSlider('prev')
 }
 
-// autoAnimate = setInterval(() => {
-//     nextButton.style.pointerEvents = 'auto';
-// },3000);
+let autoSlide = setInterval(() => {
+    showSlider('next');
+}, 3000);
 
-let unAccesptClick;
+// optional: pause on hover
+nextButton.addEventListener('mouseenter', () => {
+    clearInterval(autoSlide);
+});
+
+nextButton.addEventListener('mouseleave', () => {
+    autoSlide = setInterval(() => {
+        showSlider('next');
+    }, 3000);
+});
+
+// let unAccesptClick;
 
 const showSlider = (type) => {
     nextButton.style.pointerEvents = 'none';
@@ -176,11 +187,11 @@ const showSlider = (type) => {
         carousel.classList.add('prev');
     }
 
-    clearTimeout(unAccesptClick);
-
-    unAccesptClick = setTimeout(()=>{
-        nextButton.style.pointerEvents = 'auto';
-        prevButton.style.pointerEvents = 'auto';
-    },2000);
+    // clearTimeout(unAccesptClick);
+    //
+    // unAccesptClick = setTimeout(()=>{
+    //     nextButton.style.pointerEvents = 'auto';
+    //     prevButton.style.pointerEvents = 'auto';
+    // },2000);
 
 }
