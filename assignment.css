@@ -1,45 +1,46 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+/**{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*    font-family: 'Poppins', sans-serif;*/
+/*}*/
 
-.container{
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-}
+/*.container{*/
+/*    scroll-snap-type: y mandatory;*/
+/*    overflow-y: scroll;*/
+/*    height: 100vh;*/
+/*}*/
 
-section{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-snap-align: start;
-}
+/*section{*/
+/*    height: 100vh;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    scroll-snap-align: start;*/
+/*}*/
 
-.one{
-    background-color: #4300FF;
-}
+/*.one img{*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*}*/
 
-.two{
-    background-color: #ff253a;
-}
+/*.two{*/
+/*    background-color: #ff253a;*/
+/*}*/
 
-.three{
-    background-color: #00CAFF;
-}
+/*.three{*/
+/*    background-color: #00CAFF;*/
+/*}*/
 
-.four{
-    background-color: #4300FF;
-}
+/*.four{*/
+/*    background-color: #4300FF;*/
+/*}*/
 
-.five{
-    background-color: #ff253a;
-}
+/*.five{*/
+/*    background-color: #ff253a;*/
+/*}*/
 
-.six{
-    background-color: #00CAFF;
-}
+/*.six{*/
+/*    background-color: #00CAFF;*/
+/*}*/
 
