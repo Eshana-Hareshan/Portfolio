@@ -21,6 +21,7 @@
     <title>Portfolio</title>
 </head>
 <body>
+<canvas id="bubbleCanvas"></canvas>
 
     <nav class="navbar">
         <div class="navbar-container">
@@ -50,11 +51,13 @@
     </nav>
 
     <section class="hero-section">
-        <canvas id="bubbleCanvas"></canvas>
         <div class="hero-content">
             <h2 class="animate__animated animate__bounce animate__infinite"><span >Hey.</span> I'm</h2>
             <h1>Eshana H Bandara</h1>
             <h3>Web Developer</h3>
+        </div>
+        <div class="hero-model">
+            <spline-viewer class="robot" url="https://prod.spline.design/E6HoINNh5zPYubRf/scene.splinecode"></spline-viewer>
         </div>
     </section>
 
@@ -375,5 +378,7 @@
     </section>
 
 <script src="script.js" defer></script>
+
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.92/build/spline-viewer.js"></script>
 </body>
 </html>

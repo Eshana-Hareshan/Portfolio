@@ -8,6 +8,18 @@ body{
     cursor: url("assets/img/cursor.png"), auto;
     font-family:"Jost", sans-serif ;
     overflow-x: hidden; /* Prevent horizontal scrollbars */
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+#bubbleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* send behind everything */
+    pointer-events: none; /* allow clicks through */
 }
 /*navigation background*/
 .navbar{
@@ -47,7 +59,6 @@ body{
     font-weight: 600;
     color: black;
     text-decoration: none;
-    /*cursor: pointer;*/
     transition: all 0.9s;
 }
 .dark-mode .navbar-logo{
@@ -246,36 +257,36 @@ input:checked + .slider:after {
     height:100vh;
     overflow:hidden;
 }
-#bubbleCanvas{
-    position:absolute;
-    width:100%;
-    height:100%;
-    z-index:-1;
-    pointer-events:none;
-}
+
 .hero-content {
     position:relative;
     z-index:1;
-    text-align:center;
+    /*text-align:center;*/
     padding-top:180px;
+    padding-left: 40px;
     color:black;
 }
 .hero-content h1 {
-    font-size: 100px;
+    font-size: 70px;
 }
 .hero-content h2 {
     font-size: 60px;
+    padding-left: 80px;
 }
 .hero-content h2 span {
     color: #4300FF;
 }
 .hero-content h3 {
-    font-size: 60px;
+    font-size: 40px;
 }
 .dark-mode .hero-content{
     color:white;
 }
-
+.robot{
+    position: absolute;
+    top: 0;
+    right: -400px;
+}
 @media (max-width: 720px) {
     .hero-content {
         padding-top: 150px;

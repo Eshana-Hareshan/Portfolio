@@ -28,8 +28,9 @@ toggle.addEventListener('change', () => {
 // BUBBLE ANIMATION
 const canvas = document.getElementById('bubbleCanvas');
 const ctx = canvas.getContext('2d');
+
 let bubbles = [];
-let bubbleCount = 100; // number of bubbles
+const bubbleCount = 100;
 
 // Resize canvas
 function resizeCanvas() {
@@ -48,41 +49,49 @@ class Bubble {
     reset() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.radius = Math.random() * 8 + 2;
-        this.speedX = (Math.random() - 0.5) * 1.5;
-        this.speedY = (Math.random() - 0.5) * 1.5;
+        this.radius = Math.random() * 6 + 2;
+        this.speedX = (Math.random() - 0.5) * 1.2;
+        this.speedY = (Math.random() - 0.5) * 1.2;
     }
 
     update() {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        // Bounce on edges
-        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        if (this.x <= this.radius || this.x >= canvas.width - this.radius) {
+            this.speedX *= -1;
+        }
+
+        if (this.y <= this.radius || this.y >= canvas.height - this.radius) {
+            this.speedY *= -1;
+        }
     }
 
     draw(color) {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = color;
         ctx.globalAlpha = 0.5;
+        ctx.fillStyle = color;
         ctx.fill();
+        ctx.globalAlpha = 1;
         ctx.closePath();
     }
 }
-
 // Create bubbles
-for (let i = 0; i < bubbleCount; i++) {
-    bubbles.push(new Bubble());
+function initBubbles() {
+    bubbles = [];
+    for (let i = 0; i < bubbleCount; i++) {
+        bubbles.push(new Bubble());
+    }
 }
 
 // Animation loop
 function animateBubbles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Choose color based on dark-mode
-    let color = document.body.classList.contains('dark-mode') ? 'white' : 'black';
+    let color = document.body.classList.contains('dark-mode')
+        ? 'rgba(255,255,255,0.8)'
+        : 'rgba(0,0,0,0.6)';
 
     bubbles.forEach(bubble => {
         bubble.update();
@@ -92,6 +101,8 @@ function animateBubbles() {
     requestAnimationFrame(animateBubbles);
 }
 
+// start
+initBubbles();
 animateBubbles();
 
 // ABOUT CONTENT ANIMATION
