@@ -6,11 +6,14 @@
 }
 body{
     cursor: url("assets/img/cursor.png"), auto;
-    font-family:"Jost", sans-serif ;
+    font-family: "Outfit", sans-serif;
     overflow-x: hidden; /* Prevent horizontal scrollbars */
     margin: 0;
     padding: 0;
     position: relative;
+}
+h1,h2,h3{
+    font-family: "Sora", sans-serif;
 }
 #bubbleCanvas {
     position: fixed;
@@ -387,6 +390,11 @@ input:checked + .slider:after {
     left: 60px;
     top: 200px;
 }
+.about-para{
+    position: absolute;
+    left: 50px;
+    top: -50px;
+}
 .about-para span {
     color: black;
     transition: color 0.4s linear;
@@ -400,6 +408,83 @@ input:checked + .slider:after {
 }
 .dark-mode .about-para.active {
     color: #38bdf8;
+}
+.about-glass-card{
+    position: absolute;
+    right: 170px;
+    top: 400px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 650px;
+    padding: 30px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow:
+            0 10px 30px rgba(0,0,0,0.1),
+            inset 0 0 20px rgba(255,255,255,0.05);
+    transition: 0.4s ease;
+}
+
+.dark-mode .about-glass-card{
+    background: rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow:
+            0 10px 30px rgba(0,0,0,0.4),
+            inset 0 0 20px rgba(255,255,255,0.03);
+}
+
+.about-glass-card:hover{
+    transform: translateY(-8px);
+    box-shadow:
+            0 20px 40px rgba(67,0,255,0.2);
+}
+
+.about-glass-card h3{
+    font-size: 32px;
+    margin-bottom: 15px;
+    /*color: #4300FF;*/
+}
+
+.about-glass-card p{
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.glass-tags{
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.glass-tags span{
+    padding: 10px 18px;
+
+    border-radius: 50px;
+
+    background: rgba(67,0,255,0.12);
+
+    border: 1px solid rgba(67,0,255,0.2);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.glass-tags span:hover{
+    background: #4300FF;
+
+    color: white;
+
+    transform: translateY(-3px);
 }
 @media(max-width: 720px){
     .about-section {
@@ -448,6 +533,30 @@ input:checked + .slider:after {
     }
     .about-content .about-para {
         font-size: clamp(28px, 6vw, 40px);
+    }
+    .img-frame{
+        position: absolute;
+        width: 280px;
+        height: 380px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 80px;
+    }
+
+    .about-glass-card{
+        margin-top: 30px;
+
+        padding: 25px 20px;
+
+        width: 100%;
+    }
+
+    .about-glass-card h3{
+        font-size: 26px;
+    }
+
+    .about-glass-card p{
+        font-size: 16px;
     }
 }
 
