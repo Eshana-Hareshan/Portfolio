@@ -105,6 +105,64 @@ function animateBubbles() {
 initBubbles();
 animateBubbles();
 
+
+// HERE SECTION TYPE WRITER
+const words = [
+    "Web Developer",
+    "Frontend Developer",
+    "UI Designer",
+    "Creative Coder"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+const typingText = document.getElementById("typing-text");
+
+function typeEffect(){
+
+    const currentWord = words[wordIndex];
+
+    if(!isDeleting){
+
+        typingText.textContent =
+            currentWord.substring(0, charIndex + 1);
+
+        charIndex++;
+
+        if(charIndex === currentWord.length){
+
+            isDeleting = true;
+
+            setTimeout(typeEffect, 1200);
+
+            return;
+        }
+
+    }else{
+
+        typingText.textContent =
+            currentWord.substring(0, charIndex - 1);
+
+        charIndex--;
+
+        if(charIndex === 0){
+
+            isDeleting = false;
+
+            wordIndex++;
+
+            if(wordIndex === words.length){
+                wordIndex = 0;
+            }
+        }
+    }
+
+    setTimeout(typeEffect, isDeleting ? 60 : 120);
+}
+
+typeEffect();
 // ABOUT CONTENT ANIMATION
 
 const paragraph = document.querySelector('.about-para');
