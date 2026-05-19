@@ -26,90 +26,90 @@ toggle.addEventListener('change', () => {
 });
 
 // BUBBLE ANIMATION
-const canvas = document.getElementById('bubbleCanvas');
-const ctx = canvas.getContext('2d');
-
-let bubbles = [];
-const bubbleCount = 100;
-
-// Resize canvas
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
+// const canvas = document.getElementById('bubbleCanvas');
+// const ctx = canvas.getContext('2d');
+//
+// let bubbles = [];
+// const bubbleCount = 100;
+//
+// // Resize canvas
+// function resizeCanvas() {
+//     canvas.width = window.innerWidth;
+//     canvas.height = window.innerHeight;
+// }
+// window.addEventListener('resize', resizeCanvas);
+// resizeCanvas();
 
 // Bubble class
-class Bubble {
-    constructor() {
-        this.reset();
-    }
-
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.radius = Math.random() * 6 + 2;
-        this.speedX = (Math.random() - 0.5) * 1.2;
-        this.speedY = (Math.random() - 0.5) * 1.2;
-    }
-
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        if (this.x <= this.radius || this.x >= canvas.width - this.radius) {
-            this.speedX *= -1;
-        }
-
-        if (this.y <= this.radius || this.y >= canvas.height - this.radius) {
-            this.speedY *= -1;
-        }
-    }
-
-    draw(color) {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.globalAlpha = 0.5;
-        ctx.fillStyle = color;
-        ctx.fill();
-        ctx.globalAlpha = 1;
-        ctx.closePath();
-    }
-}
-// Create bubbles
-function initBubbles() {
-    bubbles = [];
-    for (let i = 0; i < bubbleCount; i++) {
-        bubbles.push(new Bubble());
-    }
-}
-
-// Animation loop
-function animateBubbles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    let color = document.body.classList.contains('dark-mode')
-        ? 'rgba(255,255,255,0.8)'
-        : 'rgba(0,0,0,0.6)';
-
-    bubbles.forEach(bubble => {
-        bubble.update();
-        bubble.draw(color);
-    });
-
-    requestAnimationFrame(animateBubbles);
-}
-
+// class Bubble {
+//     constructor() {
+//         this.reset();
+//     }
+//
+//     reset() {
+//         this.x = Math.random() * canvas.width;
+//         this.y = Math.random() * canvas.height;
+//         this.radius = Math.random() * 6 + 2;
+//         this.speedX = (Math.random() - 0.5) * 1.2;
+//         this.speedY = (Math.random() - 0.5) * 1.2;
+//     }
+//
+//     update() {
+//         this.x += this.speedX;
+//         this.y += this.speedY;
+//
+//         if (this.x <= this.radius || this.x >= canvas.width - this.radius) {
+//             this.speedX *= -1;
+//         }
+//
+//         if (this.y <= this.radius || this.y >= canvas.height - this.radius) {
+//             this.speedY *= -1;
+//         }
+//     }
+//
+//     draw(color) {
+//         ctx.beginPath();
+//         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+//         ctx.globalAlpha = 0.5;
+//         ctx.fillStyle = color;
+//         ctx.fill();
+//         ctx.globalAlpha = 1;
+//         ctx.closePath();
+//     }
+// }
+// // Create bubbles
+// function initBubbles() {
+//     bubbles = [];
+//     for (let i = 0; i < bubbleCount; i++) {
+//         bubbles.push(new Bubble());
+//     }
+// }
+//
+// // Animation loop
+// function animateBubbles() {
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//
+//     let color = document.body.classList.contains('dark-mode')
+//         ? 'rgba(255,255,255,0.8)'
+//         : 'rgba(0,0,0,0.6)';
+//
+//     bubbles.forEach(bubble => {
+//         bubble.update();
+//         bubble.draw(color);
+//     });
+//
+//     requestAnimationFrame(animateBubbles);
+// }
+//
 // start
-initBubbles();
-animateBubbles();
+// initBubbles();
+// animateBubbles();
 
 
-// HERE SECTION TYPE WRITER
+// HERE SECTION TYPE WRITTER
 const words = [
     "Web Developer",
-    "Frontend Developer",
+    "Photographer",
     "UI Designer",
     "Creative Coder"
 ];
@@ -126,15 +126,12 @@ function typeEffect(){
 
     if(!isDeleting){
 
-        typingText.textContent =
-            currentWord.substring(0, charIndex + 1);
-
+        typingText.textContent = currentWord.substring(0, charIndex + 1);
         charIndex++;
 
         if(charIndex === currentWord.length){
 
             isDeleting = true;
-
             setTimeout(typeEffect, 1200);
 
             return;
@@ -142,17 +139,12 @@ function typeEffect(){
 
     }else{
 
-        typingText.textContent =
-            currentWord.substring(0, charIndex - 1);
-
+        typingText.textContent = currentWord.substring(0, charIndex - 1);
         charIndex--;
 
         if(charIndex === 0){
-
             isDeleting = false;
-
             wordIndex++;
-
             if(wordIndex === words.length){
                 wordIndex = 0;
             }
@@ -163,6 +155,7 @@ function typeEffect(){
 }
 
 typeEffect();
+
 // ABOUT CONTENT ANIMATION
 
 const paragraph = document.querySelector('.about-para');
@@ -211,56 +204,54 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// SKILL SECTION ANIMATION
-let nextButton = document.getElementById('next');
-let prevButton = document.getElementById('prev');
-let carousel = document.querySelector('.carousel');
-let listHTML = document.querySelector('.carousel .list');
+// SKILLS SECTION
 
-nextButton.onclick = function () {
-    showSlider('next')
-}
-prevButton.onclick = function () {
-    showSlider('prev')
-}
+(function initSkillsSection() {
+    const skillBtns  = document.querySelectorAll('.skill-btn');
+    const iconWraps  = document.querySelectorAll('.tech-icon-wrap');
+    const cardPanels = document.querySelectorAll('.skill-card-content');
+    // if (!skillBtns.length) return;
 
-let autoSlide = setInterval(() => {
-    showSlider('next');
-}, 3000);
-
-// optional: pause on hover
-nextButton.addEventListener('mouseenter', () => {
-    clearInterval(autoSlide);
-});
-
-nextButton.addEventListener('mouseleave', () => {
-    autoSlide = setInterval(() => {
-        showSlider('next');
-    }, 3000);
-});
-
-// let unAccesptClick;
-
-const showSlider = (type) => {
-    nextButton.style.pointerEvents = 'none';
-    prevButton.style.pointerEvents = 'none';
-
-    carousel.classList.remove('prev','next');
-    let item = document.querySelectorAll('.carousel .list .item');
-    if (type === 'next') {
-        listHTML.appendChild(item[0]);
-        carousel.classList.add('next');
-    }else{
-        let positionLast  = item.length-1;
-        listHTML.prepend(item[positionLast]);
-        carousel.classList.add('prev');
+    function activateCategory(category) {
+        // Toggle button active state
+        skillBtns.forEach(b =>
+            b.classList.toggle('active', b.dataset.category === category)
+        );
+        // Toggle icon visibility in arena
+        iconWraps.forEach(w =>
+            w.classList.toggle('active-cat', w.dataset.category === category)
+        );
+        // Switch glass card content panel
+        cardPanels.forEach(panel =>
+            panel.classList.toggle('active', panel.dataset.card === category)
+        );
     }
 
-    // clearTimeout(unAccesptClick);
-    //
-    // unAccesptClick = setTimeout(()=>{
-    //     nextButton.style.pointerEvents = 'auto';
-    //     prevButton.style.pointerEvents = 'auto';
-    // },2000);
+    //Front End on load
+    activateCategory('frontend');
 
-}
+    skillBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            activateCategory(btn.dataset.category);
+        });
+    });
+})();
+
+// GALLERY
+
+const items = document.querySelectorAll(".slider1 .item");
+const preview = document.getElementById("galleryPreview");
+const previewImg = preview.querySelector("img");
+
+items.forEach(item => {
+    const img = item.querySelector("img");
+
+    item.addEventListener("mouseenter", () => {
+        previewImg.src = img.src;
+        preview.classList.add("active");
+    });
+
+    item.addEventListener("mouseleave", () => {
+        preview.classList.remove("active");
+    });
+});
